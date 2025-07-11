@@ -1,0 +1,106 @@
+:root {
+  --colorPrincipal: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utilizando Grid en contenedor principal*/
+#contenedor {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 50px auto auto auto 50px;
+  grid-template-areas:
+    "h n n"
+    "s s s"
+    "d d d "
+    "g g g"
+    "j j j"
+    "f f f";
+
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 10%;
+}
+header {
+  grid-area: h;
+}
+
+nav {
+  background-color: green;
+  grid-area: n;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+}
+
+ul>li {
+  margin-top: 40px;
+}
+
+#section0{
+  grid-area: s;
+}
+#section1 {
+  background-color: #75FFF3;
+  grid-area: d;
+}
+
+#section2 {
+  background-color: green;
+  grid-area: g;
+}
+
+#section3 {
+  background-color: blue;
+  grid-area: j;
+}
+
+footer {
+  grid-area: f;
+}
+/* Ahora usando FlexBox*/
+
+aside h2{
+  text-align: center;
+}
+aside p{
+  text-align: center;
+}
+main{
+  display: flex;
+}
+main article{
+  width: 33.3%;
+}
+article h3{
+  text-align: center;
+}
+
+/*
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+  */

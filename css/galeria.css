@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --colorPrincipal: #e8e9e9;
+    --colorCuerpo: #f7f7f7;
+    --colorCeleste: #5894b9;
+    --colorAmarillo: #e99f00;
+    --colorBoton: #f19d00;
+    --colorNaranja: #d35400;
+    --colorNavegacion: #1f1f1f;
+    --colorBotonLetra: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Uso de GRID */
+#contenedor {
+    display: grid;
+    grid-template-rows: 105px 265px auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "h n n"
+        "s s s"
+        "d d d"
+        "ft ft ft"
+        "j j j"
+        "g g g"
+        "f f f";
+}
+
+/* Cabecera y Navegacion */
+#navegacion {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 997;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+header {
+    grid-area: h;
+    width: 33%;
+    height: 105px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+#logo {
+    top: 10px;
+    height: 90px;
+}
+
+nav {
+    grid-area: n;
+    width: 100%;
+    height: 105px;
+    display: flex;
+    /*   Uso de FLEXBOX*/
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    gap: 20px;
+}
+
+nav ul {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin-left: 110px;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--colorNaranja);
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+li a:hover {
+    background-color: #f6e3d3;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+/* Fijando nav y header*/
+
+/* Banner */
+#section0 {
+    grid-area: s;
+    width: 100%;
+    height: 265px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+#imagenBanner img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Oscurece el fondo */
+    z-index: 2;
+    pointer-events: none;
+    /* permite clics en botones swiper */
+}
+
+#somos {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 30%;
+    left: 17%;
+    z-index: 3;
+}
+
+#section0 p {
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--colorBotonLetra);
+    width: 100%;
+    height: 100%;
+}
+
+.boton {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    height: 45px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Presentacion*/
+#section1 {
+    grid-area: d;
+    text-align: center;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#section1 aside {
+    width: 60%;
+    margin: 0 auto;
+    /* border: #5894b9 solid 5px; */
+}
+
+aside h2 {
+    color: var(--colorNaranja);
+    font-size: 40px;
+}
+
+aside p {
+    font-size: 17px;
+    text-align: center;
+    color: var(--colorNaranja);
+}
+
+#section1 main {
+    width: 70%;
+    margin: 0 auto;
+    /* border: #5894b9 solid 5px; */
+}
+
+article {
+    width: 100%;
+    padding: 10px;
+    /* border-style: groove; */
+}
+
+article h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: var(--colorNaranja);
+}
+
+article p {
+    color: var(--colorNavegacion);
+}
+/* Fotos */
+#section2{
+    grid-area: ft;
+    width: 100%;
+    height: 500px;
+}
+.swiper {
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* relleno */
+#section4 {
+    grid-area: g;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 150px;
+    background-color: var(--colorAmarillo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#section4 p{
+    color: var(--colorBotonLetra);
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+/* Seccion numeros telefonicos */
+#section3 {
+    grid-area: j;
+    display: flex;
+    background-color: var(--colorPrincipal);
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 188px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#section3 h2 {
+    color: var(--colorNaranja);
+}
+
+.boton {
+    background-color: var(--colorBoton);
+    width: 245px;
+    height: 45px;
+    border-radius: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boton p {
+    margin-right: 60px;
+    color: var(--colorBotonLetra);
+}
+
+/* Footer*/
+footer {
+    grid-area: f;
+    color: var(--colorPrincipal);
+    font-family: 'Roboto', sans-serif;
+}
+
+.nombreFooter h1 {
+    font-size: 35px;
+}
+
+.nombreFooter h2 {
+    font-size: 25px;
+}
+
+#sectionSubFooter p,
+.nombreFooter p {
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+#sectionFooter {
+    background-color: var(--colorNaranja);
+    display: flex;
+    padding: 49px 40px;
+    gap: 50px;
+}
+
+#sectionFooter section {
+    width: 399px;
+    height: 220px;
+    margin-left: 9%;
+}
+/* +++++++ */
+#creadorFooter {
+    background-color: var(--colorNavegacion);
+    padding: 40px 20px;
+}
+
+#pie {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pie p {
+    padding: 0;
+    margin: 0;
+}
+
+.redesFooter img{
+    width: 40px;
+}
+/* Fijando... */
+#imgWts {
+    width: 70px ;
+    position: fixed;
+    top: 730px;
+    right: 40px;
+    z-index: 9999 ;
+}
+#imgWTS {
+    width: 70px ;
+    position: fixed;
+    top: 620px;
+    right: 40px;
+    z-index: 9999 ;
+}
